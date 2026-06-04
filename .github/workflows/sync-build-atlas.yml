@@ -1,13 +1,13 @@
-name: Sync ocr → HF
+name: Sync build-atlas → HF
 on:
   push:
     branches: [main]
-    paths: ['ocr/**', '.github/workflows/sync-ocr.yml']
+    paths: ['build-atlas/**', '.github/workflows/sync-build-atlas.yml']
 
 jobs:
   sync:
     uses: ./.github/workflows/_sync-folder.yml
     with:
-      folder: ocr
+      folder: build-atlas
     secrets:
       HF_TOKEN: ${{ secrets.HF_TOKEN }}

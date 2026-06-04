@@ -1,13 +1,13 @@
-name: Sync ocr → HF
+name: Sync sam3 → HF
 on:
   push:
     branches: [main]
-    paths: ['ocr/**', '.github/workflows/sync-ocr.yml']
+    paths: ['sam3/**', '.github/workflows/sync-sam3.yml']
 
 jobs:
   sync:
     uses: ./.github/workflows/_sync-folder.yml
     with:
-      folder: ocr
+      folder: sam3
     secrets:
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
